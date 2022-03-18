@@ -1,0 +1,50 @@
+DROP TABLE IF Exists COURSE;
+DROP TABLE IF Exists STUDENT;
+DROP TABLE IF Exists STUDENT_COURSE;
+
+CREATE TABLE COURSE
+(
+    "CODE"        number(4, 0) auto_increment,
+    "TITLE"       varchar2(100),
+    "DESCRIPTION" varchar2(100)
+);
+
+CREATE TABLE STUDENT
+(
+    "ID"        number(4, 0) auto_increment,
+    "FIRSTNAME"       varchar2(100),
+    "LASTNAME" varchar2(100)
+);
+
+CREATE TABLE STUDENT_COURSE
+(
+    "ID"        number(4, 0),
+    "CODE"        number(4, 0)
+);
+
+INSERT INTO COURSE (CODE, TITLE, DESCRIPTION)
+VALUES (1, 'MATH', 'math classes');
+
+INSERT INTO COURSE (CODE, TITLE, DESCRIPTION)
+VALUES (2, 'MUSIC', 'music classes');
+
+INSERT INTO STUDENT(ID, FIRSTNAME, LASTNAME)
+VALUES (1, 'JOHN','BENITEZ');
+
+INSERT INTO STUDENT(ID, FIRSTNAME, LASTNAME)
+VALUES (2, 'SARA','CONNOR');
+
+INSERT INTO STUDENT(ID, FIRSTNAME, LASTNAME)
+VALUES (3, 'WILL','SMITH');
+
+INSERT INTO STUDENT_COURSE(ID,CODE)
+VALUES (1,1); -- john -> math
+
+INSERT INTO STUDENT_COURSE(ID,CODE)
+VALUES (1,2); -- john -> music
+
+INSERT INTO STUDENT_COURSE(ID,CODE)
+VALUES (2,2); -- sara -> music
+
+INSERT INTO STUDENT_COURSE(ID,CODE)
+VALUES (3,1); -- will -> math
